@@ -1,10 +1,9 @@
-let valorCompra = prompt ("Insira o valor da mercadoria: ");
-let icms = (1 - 0.12);
-let valorTotal = (valorCompra,icms)=>{ return valorCompra / icms}; 
-let valorIcms = (valorTotal) => valorTotal - valorCompra;
+const valor = Number(prompt("Insira o valor da parcela em R$"));
+const parcelas = Number(prompt("Insira o número de parcelas: "));
+const valorParcelas = Math.floor(valor / parcelas);
+const valorFinal = valorParcelas + (valor % parcelas);
 
-console.log(valorTotal(valorCompra,icms));
-console.log(valorIcms(valorTotal(valorCompra,icms)));
-prompt("O valor do icms é R$ "+(valorIcms(valorTotal(valorCompra,icms))).toFixed(2) +" e o valor total da compra é R$ " + valorTotal(valorCompra,icms).toFixed(2));
-
-
+for (let i = 1; i < parcelas; i++) {
+  console.log(`${i}ª parcela: R$${valorParcelas.toFixed(2)}`);
+}
+console.log(`${num}ª parcela parcela: R$${valorFinal.toFixed(2)}`);
